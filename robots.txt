@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tintadespierta.es/sitemap.xml
