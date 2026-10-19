@@ -3,4 +3,4 @@
 .gift-form #sib-container{width:100%;max-width:600px!important}.gift-form .sib-form-block p{margin:0;line-height:1.5;font-size:inherit}
 .gift-form .sib-image-form-block img{max-width:100%!important;height:auto!important}
 .gift-form .sib-form-message-panel{max-width:600px!important}.gift-form .sib-form-message-panel__inner-text{overflow-wrap:anywhere}
-@media(max-width:600px){.gift-form{padding:12px;box-shadow:5px 5px 0 #e90076}.gift-form .sib-form-block{padding-left:12px;padding-right:12px}.gift-form .sib-form__declaration{padding:0 12px}.gift-form .declaration-block-icon{display:none}.gift-form .sib-form-block__button{max-width:100%;white-space:normal}.gift-form .sib-container--large{padding:12px!important}}
+@media(max-width:600px){.gift-form{padding:12px;box-shadow:5px 5px 0 #6e100d}.gift-form .sib-form-block{padding-left:12px;padding-right:12px}.gift-form .sib-form__declaration{padding:0 12px}.gift-form .declaration-block-icon{display:none}.gift-form .sib-form-block__button{max-width:100%;white-space:normal}.gift-form .sib-container--large{padding:12px!important}}
