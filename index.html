@@ -43,6 +43,12 @@
     .two{grid-template-columns:repeat(2,minmax(0,1fr))}
     .card{background:var(--white);border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
     .card-body{padding:1.2rem}
+    .trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(70px,30%);gap:.7rem;align-items:center}
+    .book-3d{display:block;width:100%;height:auto;max-height:12rem;object-fit:contain}
+    #libros .card{display:flex;flex-direction:column}
+    #libros .card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start}
+    #libros .btn{margin-top:auto}
+    #libros .card-body > p:last-of-type{margin-bottom:1rem}
     .card-media{width:100%;height:11rem;display:block;object-fit:contain;background:#f0e9f1}
     .pill{display:inline-block;background:var(--amber);color:var(--ink);font-size:.82rem;font-weight:750;padding:.18rem .55rem;border-radius:2rem;margin-bottom:.65rem}
     .audience{font-size:.9rem;color:var(--muted);font-weight:700}
@@ -95,16 +101,12 @@
     <h2>Empieza a investigar</h2>
     <p class="lead">Juega en el navegador y descubre cómo se convierten los pasatiempos en pistas.</p>
     <div class="grid two">
-      <article class="card card-body">
-        <h3>¿Quién queda?</h3>
+      <article class="card card-body trial"><div><h3>¿Quién queda?</h3>
         <p>Un sobre y una felicitación desaparecida. Resuelve el sudoku y usa las pistas para descartar sospechosos.</p>
-        <a class="btn" href="/quien-queda/minicaso/">Jugar al minicaso de ¿Quién queda?</a>
-      </article>
-      <article class="card card-body">
-        <h3>La sopa miente</h3>
+        <a class="btn" href="/quien-queda/minicaso/">Jugar al minicaso de ¿Quién queda?</a></div><img class="book-3d" src="/assets/catalogo/qq-3d.webp" width="435" height="540" alt="Libro ¿Quién queda? en 3D" loading="lazy" decoding="async"></article>
+      <article class="card card-body trial"><div><h3>La sopa miente</h3>
         <p>En «La miel amarga», encuentra las palabras y deduce quién lo hizo, con qué, dónde y por qué.</p>
-        <a class="btn" href="/sopa/minicaso/">Jugar a La miel amarga</a>
-      </article>
+        <a class="btn" href="/sopa/minicaso/">Juega al minicaso de La sopa miente</a></div><img class="book-3d" src="/assets/catalogo/sopa-3d.webp" width="435" height="540" alt="Libro La sopa miente en 3D" loading="lazy" decoding="async"></article>
     </div>
   </section>
   <section class="band" id="libros">
@@ -120,16 +122,17 @@
             <p class="audience">Para niños</p>
             <h3>Monstruos sospechosos</h3>
             <p>Lee las pistas, observa a los 20 monstruos y tacha los que no encajan. Cuando resuelvas el misterio, puedes colorearlos.</p>
+            <a class="btn" href="/monstruos-sospechosos/">Ver Monstruos sospechosos</a>
           </div>
         </article>
         <article class="card">
-          <img class="card-media" src="/assets/cover.webp" width="1081" height="1332" alt="Cubierta de ¿Quién queda?, sudokus de investigación y misterio" loading="lazy" decoding="async">
+          <img class="card-media" src="/assets/catalogo/qq-cabecera.webp" width="1200" height="577" alt="Cabecera roja de ¿Quién queda?" loading="lazy" decoding="async">
           <div class="card-body">
             <span class="pill">Próximamente</span>
             <p class="audience">Jóvenes y adultos</p>
             <h3>¿Quién queda?</h3>
             <p>Seis investigaciones y 81 sudokus. Extrae pistas de las cifras y tacha sospechosos hasta descubrir quién queda.</p>
-            <a href="/quien-queda/">Ver el interior de ¿Quién queda?</a>
+            <a class="btn" href="/quien-queda/">Ver ¿Quién queda?</a>
           </div>
         </article>
         <article class="card" id="sopa">
@@ -139,27 +142,21 @@
             <p class="audience">Jóvenes y adultos</p>
             <h3>La sopa miente</h3>
             <p>En cada sopa hay 24 palabras y solo cuatro resuelven el misterio. Investiga 90 casos repartidos en tres niveles.</p>
-            <a href="/sopa/minicaso/">Prueba cómo se juega a La sopa miente</a>
+            <a class="btn" href="/la-sopa-miente/">Ver La sopa miente</a>
           </div>
         </article>
       </div>
     </div>
   </section>
-  <section class="wrap">
-    <h2>De la primera pista al caso resuelto</h2>
-    <ol class="grid steps">
-      <li class="card"><h3>Elige cómo investigar</h3><p>Observa monstruos, completa un sudoku o busca palabras en la sopa.</p></li>
-      <li class="card"><h3>Usa las pistas</h3><p>Relaciona lo que encuentras con las instrucciones del caso y tacha las opciones que no encajan.</p></li>
-      <li class="card"><h3>Resuelve el misterio</h3><p>Quédate con las respuestas que cumplen todas las pistas y comprueba tu solución.</p></li>
-    </ol>
-  </section>
-  <section class="band">
+  <section aria-labelledby="coleccion-titulo">
     <div class="wrap">
-      <h2>El pasatiempo te da pistas. Tú sacas las conclusiones.</h2>
-      <div class="grid">
-        <article><h3>Una historia que resolver</h3><p>Cada pista te ayuda a descartar opciones y avanzar en una investigación.</p></article>
-        <article><h3>Un reto a tu medida</h3><p>Empieza con los monstruos si buscas un juego visual para niños. Elige sudokus o sopas de letras si prefieres un reto de deducción.</p></article>
-        <article><h3>Prueba antes de elegir</h3><p>Los minicasos muestran la mecánica. También puedes ver páginas interiores de ¿Quién queda? para saber qué encontrarás en papel.</p></article>
+      <div class="evidence">
+        <span class="eyebrow">Los libros de Tinta Despierta</span>
+        <h2 id="coleccion-titulo">Una colección para regalar misterios</h2>
+        <p class="lead">Para quien disfruta tachando sospechosos, buscando palabras o descubriendo culpables entre monstruos. Elige el libro que más le vaya a la persona que tienes en mente.</p>
+        <!-- Al publicar: insertar aquí el botón «Ver la colección en Amazon» con la URL oficial.
+             Si solo hay fichas individuales, añadir un botón de compra en cada tarjeta disponible. -->
+        <p><span class="pill">Próximamente en Amazon</span></p>
       </div>
     </div>
   </section>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La sopa miente · Sopas de letras de misterio para jóvenes y adultos | Tinta Despierta Ediciones</title>
+<meta name="description" content="Investiga 90 casos en tres niveles con Mara Grant. En cada sopa encontrarás 24 palabras y solo cuatro revelan la verdad.">
+<link rel="canonical" href="https://tintadespierta.es/la-sopa-miente/">
+<link rel="icon" href="/assets/logo.webp">
+<style>
+    :root{color-scheme:light;--ink:#211b24;--paper:#fff9ee;--white:#fff;--muted:#574c59;--brand:#681f48;--teal:#145954;--amber:#f6d574;--line:#d8cbd4;--width:72rem;font:100%/1.6 system-ui,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:8rem}
+    body{margin:0;background:var(--paper);color:var(--ink)}
+    h1,h2,h3,p{margin:0 0 .75rem}
+    h1,h2,h3{font-family:Georgia,serif;line-height:1.12;text-wrap:balance}
+    h1{font-size:clamp(2.45rem,7vw,5rem);max-width:14ch}
+    h2{font-size:clamp(1.85rem,4vw,3rem)}
+    h3{font-size:1.4rem}
+    a{color:var(--brand);text-underline-offset:.2em}
+    :focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+    .wrap{width:min(100% - 2rem,var(--width));margin-inline:auto}
+    .skip{position:fixed;z-index:5;left:1rem;top:1rem;background:var(--white);padding:.6rem;transform:translateY(-200%)}
+    .skip:focus{transform:none}
+    header{position:sticky;top:0;z-index:3;background:var(--paper);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 1rem;padding:.35rem 0}
+    .brand{font:700 1.05rem Georgia,serif;color:var(--ink);text-decoration:none}
+    nav,.actions{display:flex;gap:.25rem .75rem;flex-wrap:wrap;align-items:center}
+    nav a,.brand{display:inline-flex;align-items:center;min-height:44px}
+    nav a{font-size:.94rem;font-weight:700}
+    section{padding-block:clamp(2.25rem,6vw,5rem)}
+    .hero{background:linear-gradient(125deg,#fff9ee,#f4e6ef)}
+    .hero .wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:2rem;align-items:center}
+    .eyebrow{display:block;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;color:var(--brand);margin-bottom:.75rem}
+    .lead{max-width:57ch;color:var(--muted);font-size:1.13rem}
+    .actions{gap:.65rem;margin-top:1.3rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.65rem 1rem;border:2px solid var(--brand);border-radius:.55rem;background:var(--brand);color:#fff;font-weight:750;text-decoration:none}
+    .btn.secondary{background:transparent;color:var(--brand)}
+    .btn:hover{filter:brightness(.9)}
+    .evidence{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:.65rem;padding:1.25rem}
+    .evidence p:last-child,.card p:last-child{margin-bottom:0}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
+    .card-body{padding:1.2rem}
+    .trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(70px,30%);gap:.7rem;align-items:center}
+    .book-3d{display:block;width:100%;height:auto;max-height:12rem;object-fit:contain}
+    #libros .card{display:flex;flex-direction:column}
+    #libros .card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start}
+    #libros .btn{margin-top:auto}
+    #libros .card-body > p:last-of-type{margin-bottom:1rem}
+    .card-media{width:100%;height:11rem;display:block;object-fit:contain;background:#f0e9f1}
+    .pill{display:inline-block;background:var(--amber);color:var(--ink);font-size:.82rem;font-weight:750;padding:.18rem .55rem;border-radius:2rem;margin-bottom:.65rem}
+    .audience{font-size:.9rem;color:var(--muted);font-weight:700}
+    .band{background:#f2ecef}
+    .steps{list-style:none;padding:0;counter-reset:paso}
+    .steps li{counter-increment:paso;padding:1.2rem}
+    .steps li::before{content:counter(paso);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;margin-bottom:.65rem}
+    details{max-width:49rem;border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;padding:.8rem 0;min-height:48px;font-weight:750}
+    details p{color:var(--muted);padding-right:1rem}
+    footer{background:var(--ink);color:var(--white);padding:1.5rem 0}
+    footer a{color:var(--white);display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
+    @media(max-width:46rem){.hero .wrap,.grid,.two{grid-template-columns:1fr}.hero .wrap{gap:1.35rem}.card-media{height:10rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  
+.featured-book{width:min(100%,17rem);height:auto;max-height:24rem;justify-self:center}.samples{display:grid;gap:1rem;margin-top:1.5rem}.sample{display:block;width:100%;height:auto;border-radius:.65rem}.samples figure{margin:0}.samples figcaption{padding:.7rem 1rem;color:var(--muted)}</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Ir al contenido</a>
+<header><div class="wrap nav"><a class="brand" href="/">Tinta Despierta Ediciones</a><nav aria-label="Navegación principal"><a href="/#libros">Libros</a><a href="/#pruebas">Juega gratis</a><a href="#muestras">Mira el interior</a></nav></div></header>
+<main id="contenido">
+<section class="hero">
+<div class="wrap">
+<div><span class="eyebrow">Sopas de letras de misterio para jóvenes y adultos</span><h1>La sopa miente</h1><p class="lead">Investiga 90 casos en tres niveles con Mara Grant. En cada sopa encontrarás 24 palabras y solo cuatro revelan la verdad.</p><p><span class="pill">Próximamente en Amazon</span></p><div class="actions"><a class="btn secondary" href="#muestras">Mira el interior</a><a class="btn" href="/sopa/minicaso/">Juega al minicaso de La sopa miente</a></div></div>
+<img class="featured-book" src="/assets/catalogo/sopa-3d.webp" width="435" height="540" alt="Libro La sopa miente en 3D" decoding="async">
+</div>
+</section>
+<section class="wrap"><h2>Cómo se juega</h2><ol class="grid steps"><li class="card">Encuentra las palabras de la cuadrícula.</li><li class="card">Aplica las pistas sobre sus posiciones, sentidos y cruces.</li><li class="card">Deduce quién lo hizo, con qué, dónde y por qué.</li></ol></section>
+<section class="band" id="muestras"><div class="wrap"><h2>Mira el interior</h2><p>Abre cada imagen para verla a mayor tamaño.</p><div class="samples"><figure class="card"><a href="/assets/catalogo/sopa-muestra-1.webp"><img class="sample" src="/assets/catalogo/sopa-muestra-1.webp" width="1300" height="402" alt="Presentación del libro de La sopa miente" loading="lazy" decoding="async"></a><figcaption>Presentación del libro</figcaption></figure><figure class="card"><a href="/assets/catalogo/sopa-muestra-2.webp"><img class="sample" src="/assets/catalogo/sopa-muestra-2.webp" width="1300" height="804" alt="Cómo se juega de La sopa miente" loading="lazy" decoding="async"></a><figcaption>Cómo se juega</figcaption></figure><figure class="card"><a href="/assets/catalogo/sopa-muestra-3.webp"><img class="sample" src="/assets/catalogo/sopa-muestra-3.webp" width="1300" height="805" alt="Una mirada al contenido de La sopa miente" loading="lazy" decoding="async"></a><figcaption>Una mirada al contenido</figcaption></figure></div></div></section>
+<section class="wrap"><a class="btn secondary" href="/#libros">Volver a los libros</a></section>
+</main>
+<footer><div class="wrap"><strong>Tinta Despierta Ediciones</strong><br><a href="mailto:hola@tintadespierta.es">Contacto</a><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Política de privacidad</a></div></footer>
+</body>
+</html>
