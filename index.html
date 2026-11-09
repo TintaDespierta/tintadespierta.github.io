@@ -63,6 +63,13 @@
     footer a{color:var(--white);display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
     @media(max-width:46rem){.hero .wrap,.grid,.two{grid-template-columns:1fr}.hero .wrap{gap:1.35rem}.card-media{height:10rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+      .trial-intro{grid-column:1;grid-row:1}
+    .trial .book-3d{grid-column:2;grid-row:1}
+    .trial-guide,.trial > .btn{grid-column:1/-1}
+    .trial-guide p{margin-bottom:.35rem}
+    .guide-images{display:grid;gap:.5rem}
+    .guide-images img{display:block;width:100%;height:auto;border-radius:.4rem}
+    .trial > .btn{justify-self:start}
   </style>
 </head>
 <body>
@@ -101,12 +108,20 @@
     <h2>Empieza a investigar</h2>
     <p class="lead">Juega en el navegador y descubre cómo se convierten los pasatiempos en pistas.</p>
     <div class="grid two">
-      <article class="card card-body trial"><div><h3>¿Quién queda?</h3>
-        <p>Un sobre y una felicitación desaparecida. Resuelve el sudoku y usa las pistas para descartar sospechosos.</p>
-        <a class="btn" href="/quien-queda/minicaso/">Jugar al minicaso de ¿Quién queda?</a></div><img class="book-3d" src="/assets/catalogo/qq-3d.webp" width="435" height="540" alt="Libro ¿Quién queda? en 3D" loading="lazy" decoding="async"></article>
-      <article class="card card-body trial"><div><h3>La sopa miente</h3>
-        <p>En «La miel amarga», encuentra las palabras y deduce quién lo hizo, con qué, dónde y por qué.</p>
-        <a class="btn" href="/sopa/minicaso/">Juega al minicaso de La sopa miente</a></div><img class="book-3d" src="/assets/catalogo/sopa-3d.webp" width="435" height="540" alt="Libro La sopa miente en 3D" loading="lazy" decoding="async"></article>
+      <article class="card card-body trial">
+        <div class="trial-intro"><h3>¿Quién queda?</h3>
+        <p>Un sobre y una felicitación desaparecida. Resuelve el sudoku y usa las pistas para descartar sospechosos.</p></div>
+        <img class="book-3d" src="/assets/catalogo/qq-3d.webp" width="435" height="540" alt="Libro ¿Quién queda? en 3D" loading="lazy" decoding="async">
+        <div class="trial-guide"><p><strong>Cómo se juega</strong> · Toca una viñeta para ampliarla</p><div class="guide-images"><a href="/assets/02_Resuelve_y_extrae.webp" aria-label="Ampliar: Resuelve el sudoku y extrae las cifras de las casillas sombreadas"><img src="/assets/02_Resuelve_y_extrae.webp" width="1595" height="986" alt="Resuelve el sudoku y extrae las cifras de las casillas sombreadas" loading="lazy" decoding="async"></a><a href="/assets/03_Dos_formas_de_descartar.webp" aria-label="Ampliar: Dos formas de descartar sospechosos con las pistas"><img src="/assets/03_Dos_formas_de_descartar.webp" width="1593" height="987" alt="Dos formas de descartar sospechosos con las pistas" loading="lazy" decoding="async"></a></div></div>
+        <a class="btn" href="/quien-queda/minicaso/">Jugar al minicaso de ¿Quién queda?</a>
+      </article>
+      <article class="card card-body trial">
+        <div class="trial-intro"><h3>La sopa miente</h3>
+        <p>En «La miel amarga», encuentra las palabras y deduce quién lo hizo, con qué, dónde y por qué.</p></div>
+        <img class="book-3d" src="/assets/catalogo/sopa-3d.webp" width="435" height="540" alt="Libro La sopa miente en 3D" loading="lazy" decoding="async">
+        <div class="trial-guide"><p><strong>Cómo se juega</strong> · Toca una viñeta para ampliarla</p><div class="guide-images"><a href="/assets/catalogo/sopa-muestra-2.webp" aria-label="Ampliar: Cómo se juega a La sopa miente: busca palabras y usa las pistas para deducir la solución"><img src="/assets/catalogo/sopa-muestra-2.webp" width="1300" height="804" alt="Cómo se juega a La sopa miente: busca palabras y usa las pistas para deducir la solución" loading="lazy" decoding="async"></a></div></div>
+        <a class="btn" href="/sopa/minicaso/">Juega al minicaso de La sopa miente</a>
+      </article>
     </div>
   </section>
   <section class="band" id="libros">
