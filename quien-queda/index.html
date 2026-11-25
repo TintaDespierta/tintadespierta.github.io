@@ -23,7 +23,9 @@ body.qq-book{background-color:#141212;background-image:radial-gradient(ellipse a
 .qq-book .hero-tagline{color:#C8102E;font-size:clamp(22px,2.5vw,30px);font-weight:800;line-height:1.35;text-shadow:0 0 1px #F3E6CF}
 .qq-book .fine{color:#cfbfae}
 .qq-book .stage{background:transparent;border-radius:0;padding:0;transform:none;box-shadow:none}
-.qq-book .stage img{transform:none;max-width:400px;margin:auto;box-shadow:0 16px 40px #0008}
+.qq-book .hero{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.qq-book .hero h1{font-size:clamp(38px,4.5vw,64px);line-height:1.1}
+.qq-book .stage img{display:block;width:100%;height:auto!important;max-height:none;aspect-ratio:800/987;object-fit:contain;max-width:360px;margin:auto;transform:perspective(1100px) rotateY(-12deg);border-right:12px solid #f3eee4;box-sizing:content-box;box-shadow:5px 4px 0 #b5afa5,14px 18px 32px #0008}
 .qq-book .dark,.qq-book footer{background:#141212;color:#F3E6CF}
 .qq-book .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid #594d48}
 .qq-book .stats span{color:#F3E6CF}
@@ -37,7 +39,7 @@ body.qq-book{background-color:#141212;background-image:radial-gradient(ellipse a
 .qq-book .case-files{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:expediente}
 .qq-book .case-files li{counter-increment:expediente;border:1px solid #76645a;border-left:4px solid #C8102E;background:#201b1b;padding:20px}
 .qq-book .case-files li::before{content:"EXPEDIENTE 0" counter(expediente);display:block;font:700 12px/1.5 monospace;letter-spacing:1px;margin-bottom:8px}
-@media(max-width:760px){.qq-book .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.qq-book .case-files{grid-template-columns:1fr}.qq-book h1{font-size:clamp(38px,10vw,53px)}}
+@media(max-width:760px){.qq-book .hero{grid-template-columns:1fr}.qq-book .stage img{width:80%;max-width:290px}.qq-book .hero h1{font-size:clamp(36px,9vw,53px)}.qq-book .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.qq-book .case-files{grid-template-columns:1fr}.qq-book h1{font-size:clamp(38px,10vw,53px)}}
 </style></head><body class="qq-book"><a class="skip" href="#contenido">Ir al contenido</a><header class="site-menu">
   <div class="wrap nav">
     <a class="brand" href="/" aria-label="Tinta Despierta Ediciones, inicio">Tinta Despierta Ediciones</a>
