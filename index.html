@@ -1,202 +1,51 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Libros de pasatiempos y misterio | Tinta Despierta Ediciones</title>
-  <meta name="description" content="Descubre libros de lógica y misterio para niños, jóvenes y adultos. Prueba gratis nuestros sudokus de investigación y sopas de letras de deducción.">
-  <link rel="canonical" href="https://tintadespierta.es/">
-  <link rel="icon" href="/assets/logo.webp">
-  <style>
-    :root{color-scheme:light;--ink:#211b24;--paper:#fff9ee;--white:#fff;--muted:#574c59;--brand:#681f48;--teal:#145954;--amber:#f6d574;--line:#d8cbd4;--width:72rem;font:100%/1.6 system-ui,sans-serif}
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:8rem}
-    body{margin:0;background:var(--paper);color:var(--ink)}
-    h1,h2,h3,p{margin:0 0 .75rem}
-    h1,h2,h3{font-family:Georgia,serif;line-height:1.12;text-wrap:balance}
-    h1{font-size:clamp(2.45rem,7vw,5rem);max-width:14ch}
-    h2{font-size:clamp(1.85rem,4vw,3rem)}
-    h3{font-size:1.4rem}
-    a{color:var(--brand);text-underline-offset:.2em}
-    :focus-visible{outline:3px solid var(--teal);outline-offset:4px}
-    .wrap{width:min(100% - 2rem,var(--width));margin-inline:auto}
-    .skip{position:fixed;z-index:5;left:1rem;top:1rem;background:var(--white);padding:.6rem;transform:translateY(-200%)}
-    .skip:focus{transform:none}
-    header{position:sticky;top:0;z-index:3;background:var(--paper);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 1rem;padding:.35rem 0}
-    .brand{font:700 1.05rem Georgia,serif;color:var(--ink);text-decoration:none}
-    nav,.actions{display:flex;gap:.25rem .75rem;flex-wrap:wrap;align-items:center}
-    nav a,.brand{display:inline-flex;align-items:center;min-height:44px}
-    nav a{font-size:.94rem;font-weight:700}
-    section{padding-block:clamp(2.25rem,6vw,5rem)}
-    .hero{background:linear-gradient(125deg,#fff9ee,#f4e6ef)}
-    .hero .wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:2rem;align-items:center}
-    .eyebrow{display:block;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.75rem;color:var(--brand);margin-bottom:.75rem}
-    .lead{max-width:57ch;color:var(--muted);font-size:1.13rem}
-    .actions{gap:.65rem;margin-top:1.3rem}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.65rem 1rem;border:2px solid var(--brand);border-radius:.55rem;background:var(--brand);color:#fff;font-weight:750;text-decoration:none}
-    .btn.secondary{background:transparent;color:var(--brand)}
-    .btn:hover{filter:brightness(.9)}
-    .evidence{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:.65rem;padding:1.25rem}
-    .evidence p:last-child,.card p:last-child{margin-bottom:0}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .card{background:var(--white);border:1px solid var(--line);border-radius:.8rem;overflow:hidden}
-    .card-body{padding:1.2rem}
-    .trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(70px,30%);gap:.7rem;align-items:center}
-    .book-3d{display:block;width:100%;height:auto;max-height:12rem;object-fit:contain}
-    #libros .card{display:flex;flex-direction:column}
-    #libros .card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start}
-    #libros .btn{margin-top:auto}
-    #libros .card-body > p:last-of-type{margin-bottom:1rem}
-    .card-media{width:100%;height:11rem;display:block;object-fit:contain;background:#f0e9f1}
-    .pill{display:inline-block;background:var(--amber);color:var(--ink);font-size:.82rem;font-weight:750;padding:.18rem .55rem;border-radius:2rem;margin-bottom:.65rem}
-    .audience{font-size:.9rem;color:var(--muted);font-weight:700}
-    .band{background:#f2ecef}
-    .steps{list-style:none;padding:0;counter-reset:paso}
-    .steps li{counter-increment:paso;padding:1.2rem}
-    .steps li::before{content:counter(paso);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;margin-bottom:.65rem}
-    details{max-width:49rem;border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;padding:.8rem 0;min-height:48px;font-weight:750}
-    details p{color:var(--muted);padding-right:1rem}
-    footer{background:var(--ink);color:var(--white);padding:1.5rem 0}
-    footer a{color:var(--white);display:inline-flex;align-items:center;min-height:44px;margin-right:1rem}
-    @media(max-width:46rem){.hero .wrap,.grid,.two{grid-template-columns:1fr}.hero .wrap{gap:1.35rem}.card-media{height:10rem}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-      .trial-intro{grid-column:1;grid-row:1}
-    .trial .book-3d{grid-column:2;grid-row:1}
-    .trial-guide,.trial > .btn{grid-column:1/-1}
-    .trial-guide p{margin-bottom:.35rem}
-    .guide-images{display:grid;gap:.5rem}
-    .guide-images img{display:block;width:100%;height:auto;border-radius:.4rem}
-    .trial > .btn{justify-self:start}
-  </style>
-</head>
-<body>
-<a class="skip" href="#contenido">Ir al contenido</a>
-<header>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><title>¿Quién queda? · Tinta Despierta</title><link rel="stylesheet" href="../style.css"><style>
+header.site-menu{position:sticky;top:0;z-index:30;display:block;width:100%;max-width:none;margin:0;padding:0;background:#fff9ee;border:0;border-bottom:1px solid #d8cbd4}
+.site-menu .nav{width:min(calc(100% - 2rem),72rem);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 1rem;padding:.35rem 0}
+.site-menu .brand{font:700 1.05rem Georgia,serif;color:#211b24;text-decoration:none;letter-spacing:normal}
+.site-menu nav{display:flex;gap:.25rem .75rem;flex-wrap:wrap;align-items:center;margin:0}
+.site-menu nav a,.site-menu .brand{display:inline-flex;align-items:center;min-height:44px}
+.site-menu nav a{font:700 .94rem/1.6 system-ui,sans-serif;color:#681f48;text-decoration:underline;text-underline-offset:.2em;padding:0}
+.site-menu a:focus-visible{outline:3px solid #145954;outline-offset:4px}
+</style>
+<meta name="description" content="¿Quién queda?: sudokus de investigación y misterio. 6 casos inspirados en enigmas reales, 81 sudokus, 480 pistas y más de 3.000 sospechosos.">
+<link rel="canonical" href="https://tintadespierta.es/quien-queda/">
+<meta property="og:title" content="¿Quién queda? · Sudokus de investigación y misterio">
+<meta property="og:description" content="¿Quién queda?: sudokus de investigación y misterio. 6 casos inspirados en enigmas reales, 81 sudokus, 480 pistas y más de 3.000 sospechosos.">
+<meta property="og:image" content="https://tintadespierta.es/assets/qq-compartir-1200x630.webp">
+<meta property="og:url" content="https://tintadespierta.es/quien-queda/">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+body.qq-book{background-color:#141212;background-image:radial-gradient(ellipse at 12% 8%,#ffffff05,transparent 55%),radial-gradient(ellipse at 90% 60%,#ffffff03,transparent 50%);color:#F3E6CF}
+.qq-book header.site-menu{background:#141212;border-color:#594d48}
+.qq-book .site-menu .brand,.qq-book .site-menu nav a{color:#F3E6CF}
+.qq-book .accent,.qq-book .eyebrow{color:#F3E6CF}
+.qq-book .hero-tagline{color:#C8102E;font-size:clamp(22px,2.5vw,30px);font-weight:800;line-height:1.35;text-shadow:0 0 1px #F3E6CF}
+.qq-book .fine{color:#cfbfae}
+.qq-book .stage{background:transparent;border-radius:0;padding:0;transform:none;box-shadow:none}
+.qq-book .stage img{transform:none;max-width:400px;margin:auto;box-shadow:0 16px 40px #0008}
+.qq-book .dark,.qq-book footer{background:#141212;color:#F3E6CF}
+.qq-book .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid #594d48}
+.qq-book .stats span{color:#F3E6CF}
+.qq-book .card,.qq-book .paper{background:#201b1b;border:1px solid #76645a;color:#F3E6CF;box-shadow:none}
+.qq-book .card:hover{border-color:#C8102E;box-shadow:none}
+.qq-book .card .num{color:#F3E6CF}
+.qq-book .btn{background:#C8102E;border-color:#C8102E;color:#F3E6CF}
+.qq-book .btn.secondary{background:transparent;border-color:#F3E6CF;color:#F3E6CF}
+.qq-book details{border-color:#76645a}
+.qq-book :focus-visible{outline-color:#F3E6CF}
+.qq-book .case-files{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;counter-reset:expediente}
+.qq-book .case-files li{counter-increment:expediente;border:1px solid #76645a;border-left:4px solid #C8102E;background:#201b1b;padding:20px}
+.qq-book .case-files li::before{content:"EXPEDIENTE 0" counter(expediente);display:block;font:700 12px/1.5 monospace;letter-spacing:1px;margin-bottom:8px}
+@media(max-width:760px){.qq-book .stats{grid-template-columns:repeat(2,minmax(0,1fr))}.qq-book .case-files{grid-template-columns:1fr}.qq-book h1{font-size:clamp(38px,10vw,53px)}}
+</style></head><body class="qq-book"><a class="skip" href="#contenido">Ir al contenido</a><header class="site-menu">
   <div class="wrap nav">
     <a class="brand" href="/" aria-label="Tinta Despierta Ediciones, inicio">Tinta Despierta Ediciones</a>
     <nav aria-label="Navegación principal">
-      <a href="#libros">Libros</a>
-      <a href="#pruebas">Juega gratis</a>
-      <a href="#preguntas">Preguntas</a>
+      <a href="/#libros">Libros</a>
+      <a href="/#pruebas">Juega gratis</a>
+      <a href="/#preguntas">Preguntas</a>
     </nav>
   </div>
-</header>
-<main id="contenido">
-  <section class="hero" aria-labelledby="titulo">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow">Pasatiempos de lógica, deducción, observación y descarte</span>
-        <h1 id="titulo">Sigue las pistas. Resuelve el misterio.</h1>
-        <p class="lead">Investiga con sudokus, sopas de letras o monstruos sospechosos. Prueba un minicaso gratis y descubre qué libro de pasatiempos va contigo.</p>
-        <div class="actions">
-          <a class="btn" href="#pruebas">Prueba un minicaso gratis</a>
-          <a class="btn secondary" href="#libros">Explora los libros</a>
-        </div>
-      </div>
-      <aside class="evidence" aria-label="Qué encontrarás">
-        <h2>Un misterio para cada detective</h2>
-        <p><strong>Niños:</strong> pistas visuales, monstruos y coloreado.</p>
-        <p><strong>Jóvenes y adultos:</strong> sudokus de investigación y sopas de letras con deducción.</p>
-      </aside>
-    </div>
-  </section>
-  <section class="wrap" id="pruebas">
-    <span class="eyebrow">Dos minicasos gratuitos</span>
-    <h2>Empieza a investigar</h2>
-    <p class="lead">Juega en el navegador y descubre cómo se convierten los pasatiempos en pistas.</p>
-    <div class="grid two">
-      <article class="card card-body trial">
-        <div class="trial-intro"><h3>¿Quién queda?</h3>
-        <p>Un sobre y una felicitación desaparecida. Resuelve el sudoku y usa las pistas para descartar sospechosos.</p></div>
-        <img class="book-3d" src="/assets/catalogo/qq-3d.webp" width="435" height="540" alt="Libro ¿Quién queda? en 3D" loading="lazy" decoding="async">
-        <div class="trial-guide"><p><strong>Cómo se juega</strong> · Toca una viñeta para ampliarla</p><div class="guide-images"><a href="/assets/02_Resuelve_y_extrae.webp" aria-label="Ampliar: Resuelve el sudoku y extrae las cifras de las casillas sombreadas"><img src="/assets/02_Resuelve_y_extrae.webp" width="1595" height="986" alt="Resuelve el sudoku y extrae las cifras de las casillas sombreadas" loading="lazy" decoding="async"></a><a href="/assets/03_Dos_formas_de_descartar.webp" aria-label="Ampliar: Dos formas de descartar sospechosos con las pistas"><img src="/assets/03_Dos_formas_de_descartar.webp" width="1593" height="987" alt="Dos formas de descartar sospechosos con las pistas" loading="lazy" decoding="async"></a></div></div>
-        <a class="btn" href="/quien-queda/minicaso/">Jugar al minicaso de ¿Quién queda?</a>
-      </article>
-      <article class="card card-body trial">
-        <div class="trial-intro"><h3>La sopa miente</h3>
-        <p>En «La miel amarga», encuentra las palabras y deduce quién lo hizo, con qué, dónde y por qué.</p></div>
-        <img class="book-3d" src="/assets/catalogo/sopa-3d.webp" width="435" height="540" alt="Libro La sopa miente en 3D" loading="lazy" decoding="async">
-        <div class="trial-guide"><p><strong>Cómo se juega</strong> · Toca una viñeta para ampliarla</p><div class="guide-images"><a href="/assets/catalogo/sopa-muestra-2.webp" aria-label="Ampliar: Cómo se juega a La sopa miente: busca palabras y usa las pistas para deducir la solución"><img src="/assets/catalogo/sopa-muestra-2.webp" width="1300" height="804" alt="Cómo se juega a La sopa miente: busca palabras y usa las pistas para deducir la solución" loading="lazy" decoding="async"></a></div></div>
-        <a class="btn" href="/sopa/minicaso/">Juega al minicaso de La sopa miente</a>
-      </article>
-    </div>
-  </section>
-  <section class="band" id="libros">
-    <div class="wrap">
-      <span class="eyebrow">La estantería de Tinta Despierta</span>
-      <h2>Elige tu próximo libro</h2>
-      <p class="lead">Tres maneras de investigar con lápiz y papel. Los tres títulos estarán próximamente en Amazon.</p>
-      <div class="grid">
-        <article class="card" id="monstruos">
-          <img class="card-media" src="/assets/monstruos-cabecera.jpg" width="1200" height="512" alt="Ilustración de Monstruos sospechosos con cinco monstruos de colores" loading="lazy" decoding="async">
-          <div class="card-body">
-            <span class="pill">Próximamente</span>
-            <p class="audience">Para niños</p>
-            <h3>Monstruos sospechosos</h3>
-            <p>Lee las pistas, observa a los 20 monstruos y tacha los que no encajan. Cuando resuelvas el misterio, puedes colorearlos.</p>
-            <a class="btn" href="/monstruos-sospechosos/">Ver Monstruos sospechosos</a>
-          </div>
-        </article>
-        <article class="card">
-          <img class="card-media" src="/assets/catalogo/qq-cabecera.webp" width="1200" height="577" alt="Cabecera roja de ¿Quién queda?" loading="lazy" decoding="async">
-          <div class="card-body">
-            <span class="pill">Próximamente</span>
-            <p class="audience">Jóvenes y adultos</p>
-            <h3>¿Quién queda?</h3>
-            <p>Seis investigaciones y 81 sudokus. Extrae pistas de las cifras y tacha sospechosos hasta descubrir quién queda.</p>
-            <a class="btn" href="/quien-queda/">Ver ¿Quién queda?</a>
-          </div>
-        </article>
-        <article class="card" id="sopa">
-          <img class="card-media" src="/assets/sopa-cabecera.jpg" width="1200" height="600" alt="Cabecera de La sopa miente, de Los casos de Mara Grant" loading="lazy" decoding="async">
-          <div class="card-body">
-            <span class="pill">Próximamente</span>
-            <p class="audience">Jóvenes y adultos</p>
-            <h3>La sopa miente</h3>
-            <p>En cada sopa hay 24 palabras y solo cuatro resuelven el misterio. Investiga 90 casos repartidos en tres niveles.</p>
-            <a class="btn" href="/la-sopa-miente/">Ver La sopa miente</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section aria-labelledby="coleccion-titulo">
-    <div class="wrap">
-      <div class="evidence">
-        <span class="eyebrow">Los libros de Tinta Despierta</span>
-        <h2 id="coleccion-titulo">Una colección para regalar misterios</h2>
-        <p class="lead">Para quien disfruta tachando sospechosos, buscando palabras o descubriendo culpables entre monstruos. Elige el libro que más le vaya a la persona que tienes en mente.</p>
-        <!-- Al publicar: insertar aquí el botón «Ver la colección en Amazon» con la URL oficial.
-             Si solo hay fichas individuales, añadir un botón de compra en cada tarjeta disponible. -->
-        <p><span class="pill">Próximamente en Amazon</span></p>
-      </div>
-    </div>
-  </section>
-  <section class="wrap" id="preguntas">
-    <h2>Preguntas frecuentes</h2>
-    <details><summary>¿Los minicasos son gratuitos?</summary><p>Sí. Puedes abrir los dos minicasos desde esta página y jugar en el navegador.</p></details>
-    <details><summary>¿Qué libro es mejor para un niño?</summary><p>Monstruos sospechosos está pensado para pequeños detectives. Las pistas se aplican observando un panel ilustrado y tachando monstruos.</p></details>
-    <details><summary>¿En qué se diferencian los dos libros de Mara Grant?</summary><p>En ¿Quién queda? las cifras de un sudoku te dan pistas. En La sopa miente las pistas se basan en las posiciones y cruces de las palabras.</p></details>
-    <details><summary>¿Dónde podré comprar los libros?</summary><p>Estarán próximamente en Amazon. Enlazaremos cada ficha de compra desde su libro cuando esté disponible.</p></details>
-  </section>
-  <section class="band">
-    <div class="wrap">
-      <h2>Tu primera investigación empieza aquí</h2>
-      <p>Elige un sudoku de misterio o una sopa de letras y sigue la primera pista.</p>
-      <a class="btn" href="#pruebas">Elegir mi minicaso gratis</a>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="wrap">
-    <strong>Tinta Despierta Ediciones</strong><br>
-    <a href="mailto:hola@tintadespierta.es">Contacto</a>
-    <a href="/aviso-legal/">Aviso legal</a>
-    <a href="/privacidad/">Política de privacidad</a>
-  </div>
-</footer>
-</body>
-</html>
+</header><main id="contenido"><section class="wrap hero"><div><span class="eyebrow">Los casos de Mara Grant · Volumen 1</span><h1>Un sudoku es<br>solo el <span class="accent">principio.</span></h1><p class="hero-tagline">El culpable está en la lista. ¿Podrás encontrarlo?</p><p class="lead">Resuelve sudokus. Interpreta las pistas. Tacha sospechosos hasta descubrir quién queda.</p><p>Seis misterios para jóvenes y adultos que disfrutan investigando con lápiz y papel.</p><div class="buttons"><a class="btn" href="../quien-queda/minicaso/">Prueba un minicaso gratis ↗</a><a class="btn secondary" href="../quien-queda/#interior">Descubre el libro</a></div><p class="fine">¿Quién queda? · Álex Valmer · Próximamente en Amazon</p></div><div class="stage"><img src="/assets/qq-portada.webp" width="800" height="987" fetchpriority="high" alt="Portada de ¿Quién queda?"></div></section><div class="dark stats"><div><strong>6</strong><span>Casos inspirados en enigmas reales</span></div><div><strong>81</strong><span>Sudokus clásicos de 9 × 9</span></div><div><strong>480</strong><span>Pistas</span></div><div><strong>+3.000</strong><span>Sospechosos</span></div></div><section class="wrap"><span class="eyebrow">Elige tu siguiente pista</span><h2>La investigación<br>empieza aquí.</h2><div class="cards"><a class="card" href="../quien-queda/minicaso/"><span class="num">01 /</span><h3>Prueba un minicaso</h3><p>Un sobre, treinta invitados y una felicitación desaparecida. Descubre la mecánica con esta prueba reducida en tu navegador.</p><strong>Abrir el minicaso →</strong></a><a class="card" href="../quien-queda/#interior"><span class="num">02 /</span><h3>Abre el libro</h3><p>Descubre qué encontrarás entre sus páginas y cómo se convierten las cifras en pistas.</p><strong>Ver el expediente →</strong></a><a class="card" href="../quien-queda/#mecanica"><span class="num">03 /</span><h3>Aprende a investigar</h3><p>Resuelve, extrae y descarta. Tres pasos para seguir el rastro hasta el final.</p><strong>Así se juega →</strong></a></div></section><section class="wrap" id="mecanica"><span class="eyebrow">Cómo se juega</span><h2>Cada cifra abre<br>una nueva <span class="accent">pista.</span></h2><div class="cards"><div class="paper"><h3>01. Resuelve</h3><p>Completa el sudoku y busca las casillas indicadas.</p></div><div class="paper"><h3>02. Extrae</h3><p>Usa las cifras para obtener una pista numérica o encontrar una pista textual.</p></div><div class="paper"><h3>03. Descarta</h3><p>Tacha los registros que encajan con la instrucción. Sigue hasta descubrir quién queda.</p></div></div><img loading="lazy" class="banner" src="../assets/03_Dos_formas_de_descartar.webp" alt="Ejemplos de descarte por número de registro y por nombre o apellido" style="margin-top:40px"></section><section class="wrap" aria-labelledby="casos-reales"><h2 id="casos-reales">6 casos inspirados en enigmas reales</h2><ol class="case-files"><li>El hacha de Lizzie Borden (1892)</li><li>El collar del Titanic (1912)</li><li>El mecanismo de Anticitera (1901)</li><li>La fuga de Alcatraz (1962)</li><li>El secuestro aéreo de D. B. Cooper (1971)</li><li>La maldición de Tutankamón (1922)</li></ol><p>Historias que mezclan hechos documentados y ficción para que investigues junto a Mara Grant, sudoku a sudoku.</p></section><section class="wrap" aria-labelledby="sobre-el-libro"><h2 id="sobre-el-libro">Sobre el libro</h2><p>Los pasatiempos han evolucionado. Aquí no solo resuelves sudokus: participas en una investigación. Cada sudoku te da las pistas que necesitas para avanzar en el caso, descartar sospechosos y llegar hasta el culpable.</p><p>Mara Grant investiga seis misterios independientes. Resuelve 81 sudokus clásicos de 9 × 9 y extrae las cifras de las casillas sombreadas para obtener pistas.</p><p>Aplica las pistas numéricas y textuales a los paneles de 300 a 750 sospechosos por caso. Descarta por número de registro, nombre o apellido hasta descubrir quién queda. El libro tiene 170 páginas, con instrucciones ilustradas y soluciones.</p></section>
+<section class="dark" id="interior"><div class="wrap two"><div><span class="eyebrow">El expediente</span><h2>¿Quién queda?</h2><p class="lead">Sudokus de investigación y misterio</p><p>Mara Grant sigue los hechos. Tú te encargas de las cifras y los descartes. Seis investigaciones independientes y más de 3.000 sospechosos en total.</p><p>170 páginas · Interior en blanco y negro<br>Álex Valmer · Tinta Despierta Ediciones</p><p><strong>Próximamente en Amazon</strong></p><a class="btn" href="../quien-queda/minicaso/">Mientras tanto, prueba un caso</a></div><a href="/assets/04-QQ_Aplus_04_Beneficios_v2.webp" target="_blank"><img loading="lazy" class="banner" src="/assets/04-QQ_Aplus_04_Beneficios_v2.webp" alt="Contenido y características del libro. Pulsa para ampliar"></a></div></section><section class="wrap"><img loading="lazy" class="banner" src="../assets/05_Perfecto_para.webp" alt="Perfecto para desconectar de las pantallas, disfrutar a tu ritmo, regalar y mantener la mente activa"><h2>Antes de abrir el caso.</h2><details><summary>¿Qué es ¿Quién queda??</summary><p>Un libro de sudokus de investigación y misterio. Los sudokus proporcionan cifras que se convierten en pistas para descartar sospechosos.</p></details><details><summary>¿Para quién está pensado?</summary><p>Para jóvenes y adultos que disfrutan de los sudokus, la lógica y el misterio. Puedes avanzar a tu ritmo, con lápiz y papel.</p></details><details><summary>¿Qué incluye el libro?</summary><p>Seis casos inspirados en enigmas reales, 81 sudokus de 9 × 9, 480 pistas y entre 300 y 750 sospechosos por caso (más de 3.000 en total). Algunos casos tienen dos responsables.</p></details><details><summary>¿Cómo funcionan los niveles?</summary><p>Los niveles corresponden al número de sospechosos de cada caso.</p></details><details><summary>¿Las soluciones están incluidas?</summary><p>Sí, el libro incluye las soluciones en su apartado final.</p></details><details><summary>¿Puedo probarlo antes?</summary><p>Sí. El minicaso «El sobre de Navidad» se puede jugar gratis en esta web, sin introducir tu correo.</p></details><details><summary>¿Dónde puedo comprarlo?</summary><p>Se venderá en Amazon. Cuando esté publicado, encontrarás aquí el enlace directo. La compra, el pago y el envío se gestionarán en Amazon.</p></details><details><summary>¿Cómo consigo el caso extra y los paneles?</summary><p>Escanea el QR del interior del libro. Te llevará a la página para solicitar el caso extra y los paneles para imprimir. Recibir novedades es opcional.</p></details><p>¿Te queda alguna duda? <a href="mailto:hola@tintadespierta.es">Escríbenos a hola@tintadespierta.es</a>.</p></section></main><footer><div><strong>Tinta Despierta Ediciones</strong><br><a href="mailto:hola@tintadespierta.es">hola@tintadespierta.es</a></div><div><a href="../aviso-legal/">Aviso legal</a><a href="/privacidad">Política de privacidad</a></div></footer></body></html>
